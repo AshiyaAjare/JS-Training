@@ -1,0 +1,84 @@
+<!-- 
+Q1. Create a simple HTML file in notepad (do not use VSCode). To this, add some javascri by:
+
+a. Writing javascript between script tags
+
+b. Writing javascript in a file and passing that as a src in the script t
+
+2. Where to attach the script tag:
+
+<html>
+
+<head></head>
+
+<body>
+
+<h1 id="test">Hello World!</h1>
+
+</body>
+
+</html>
+
+Given the above html, find out what happens when you try to access the element h1 in javascript (using document.getElementById) and change its content to “Goodbye World” when the script is attached:
+
+● in the head tag
+
+● at the start of the body tag
+
+● at the end of the body tag 
+-->
+
+<!-- Inside Head Tag -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+    <script>
+        document.getElementById("test").innerHTML = "Goodbye World"; 
+    </script>
+</head>
+<body> 
+    <h1 id="test">Hello World!</h1>
+</body>
+</html> 
+-->
+
+<!-- Start of Body Tag -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body> 
+    <script>
+        document.getElementById("test").innerHTML = "Goodbye World"; 
+    </script>
+    <h1 id="test">Hello World!</h1>
+</body>
+</html> 
+-->
+
+<!-- End of Body Tag -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body> 
+    <h1 id="test">Hello World!</h1>
+    <script>
+        document.getElementById("test").innerHTML = "Goodbye World"; 
+    </script>
+</body>
+</html> 
+-->
+
+
+
+<!-- 
+ANALYSIS: The Best position to attach script tag is at the end of <body> tag, as it will enable all the the page to load 
+beforeJavascript runs.
+-->
