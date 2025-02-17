@@ -31,6 +31,7 @@ function App() {
       <h1>Task List</h1>
       { tasks.map((task, index) => {
           return <div key={index}>
+            <input type="checkbox" />
             {task}
             <button onClick={() => {deleteTask(index)}}>Delete</button>
           </div>
