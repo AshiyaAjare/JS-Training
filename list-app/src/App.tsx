@@ -5,7 +5,7 @@ function App() {
   const [tasks, setTasks] = useState<string[]>([]);
   const [taskInput, setTaskInput] = useState<string>('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setTaskInput(e.target.value);
   }
 
@@ -29,7 +29,7 @@ function App() {
     
     <div>
       <h1>Task List</h1>
-      { tasks.map((task, index) => {
+      { tasks.map((task: string, index: number) => {
           return <div key={index}>
             <input type="checkbox" />
             {task}
