@@ -62,29 +62,35 @@ const users = [
 ];
   
 //Using Filter
-console.log("USING FILTER ")
+console.log("USING FILTER ");
 function filterByName(name) {
-  return users.filter(user => user.first_name.toLowerCase().includes(name.toLowerCase()));
+  const trimmedName = name.trim(); // Trim spaces
+  if (trimmedName === "") return users; // If empty string, return all users
+  return users.filter(user => user.first_name.toLowerCase().includes(trimmedName.toLowerCase()));
 }
-  
+
 console.log(filterByName("Nick")); 
 console.log(filterByName("am")); 
+console.log(filterByName(" Nick")); // Handles spaces before/after
+console.log(filterByName("")); // Returns all users
+
 
 
 //Using Map
-console.log("USING MAP: ")
+console.log("USING MAP: ");
 const emails = users.map(user => user.email);
 console.log(emails);
 
-//Sort to arrancge order in descending order
-console.log("USING SORT: ")
+//Sort to arrange order in descending order
+console.log("USING SORT: ");
 const sortedByDOB = [...users].sort((a, b) => new Date(b.date_of_birth) - new Date(a.date_of_birth));
 console.log(sortedByDOB);
 
 //getById
-console.log("USING getById: ")
+console.log("USING getById: ");
 function getById(id) {
-  return users.find(user => user.id === id);
+  return users.find(user => user.id === id) || null; // Return null if not found
 }
 
 console.log(getById(6));
+console.log(getById(15)); // Edge case: ID not found
